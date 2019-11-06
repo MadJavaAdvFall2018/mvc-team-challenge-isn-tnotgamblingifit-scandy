@@ -16,13 +16,13 @@ public class DiceEngine extends Object {
     /**
      *  Constructor for the BeanOne object
      */
-    public BeanOne() {
+    public DiceEngine() {
         centerPot  = 0;
     }
 
 
    public void setNumberOfPlayers(int playerCount) {
-    int i = 0;   
+    int i = 0;
     for (i <= playerCount) {
         Player newPlayer = new Player();
         newPlayer.setName = i;

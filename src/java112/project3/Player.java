@@ -9,13 +9,13 @@ import java.util.*;
 public class Player extends Object {
 
     private  int  ownedPot;
-    private string name;  
+    private string name;
 
 
     /**
      *  Constructor for the BeanOne object
      */
-    public BeanOne() {
+    public Player() {
         ownedPot  = 10;
     }
 
