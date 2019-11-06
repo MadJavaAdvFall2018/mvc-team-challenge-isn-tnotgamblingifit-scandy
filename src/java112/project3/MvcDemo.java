@@ -36,8 +36,7 @@ public class MvcDemo extends HttpServlet {
 
         String url = "/beanOneDemo.jsp";
 
-        RequestDispatcher dispatcher
-                = getServletContext().getRequestDispatcher(url);
+        RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(url);
         dispatcher.forward(request, response);
 
 
