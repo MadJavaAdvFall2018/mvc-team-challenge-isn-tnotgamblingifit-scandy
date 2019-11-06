@@ -10,10 +10,10 @@ import javax.servlet.annotation.*;
  * @author Michael, Dan, and Elspeth
  */
 @WebServlet(
-    name = "leftRightCenter",
-    urlPatterns = { "/lrc" }
+    name = "leftCenterRight",
+    urlPatterns = { "/lcr" }
 )
-public class LeftRightCenter extends HttpServlet {
+public class LeftCenterRight extends HttpServlet {
 
     /**
      * Handles HTTP GET Requests
@@ -23,5 +23,9 @@ public class LeftRightCenter extends HttpServlet {
      * @exception ServletException if a Servlet failure occurs
      * @exception IOException if an IO failure occurs
      */
-    public void doGet(HttpServletRequest request, )
+    public void doGet(HttpServletRequest request, HttpServletResponse response)
+        throws ServletException, IOException {
+
+
+    }
 }

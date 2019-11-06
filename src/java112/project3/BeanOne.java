@@ -1,40 +1,41 @@
 package java112.project3;
+import java.util.*;
 
 /**
  *  This is a JavaBean to demonstrate using beans with JSP.
  *
- *@author    eknapp
+ *@author    mHall
  */
-public class BeanOne extends Object {
+public class Player extends Object {
 
-    private  String  mySpecialData;
+    private  int  ownedPot;
 
 
     /**
      *  Constructor for the BeanOne object
      */
     public BeanOne() {
-        mySpecialData  = "default value";
+        ownedPot  = 10;
     }
 
 
     /**
-     *  Gets the mySpecialData attribute of the BeanOne object
+     *  Gets the ownedPot attribute of the BeanOne object
      *
      *@return    The mySpecialData value
      */
-    public String getMySpecialData() {
-        return mySpecialData;
+    public String getOwnedPot() {
+        return ownedPot;
     }
 
 
     /**
      *  Sets the mySpecialData attribute of the BeanOne object
      *
-     *@param  mySpecialData  The new mySpecialData value
+     *@param  ownedPot  The new mySpecialData value
      */
-    public void setMySpecialData(String mySpecialData) {
-        this.mySpecialData = mySpecialData;
+    public void setOwnedPot(String ownedPot) {
+        this.mySpecialData = ownedPot;
     }
 
 }
