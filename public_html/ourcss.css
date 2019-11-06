@@ -5,25 +5,35 @@ body {
 }
 
 /* the dice block css */
-#1, #2 {
-    background-color: red;
+#one {
+    background: red;
 }
 
-#3 {
-    background-image: url("images/c.png");
+#three {
+    background: url("images/c.png");
+    background-repeat: no-repeat;
+    background-size: 100%;
 }
 
-#4 {
-    background-color: white;
+#four {
+    background: white;
 }
 
-#5, #6 {
-    background-color: blue;
+#five {
+    background: blue;
 }
 
-td {
-    width: 10px;
-    height:10px;
+#dice_grid {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    justify-content: center;
+    grid-gap: 5px;
+
+}
+
+article div {
     border: 2px solid black;
-    border-radius: 10px;
+    min-width: 20em;
+    min-height: 20em;
+    border-radius: 50px;
 }
