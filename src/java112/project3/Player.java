@@ -1,59 +1,56 @@
 package java112.project3;
+
 import java.util.*;
 
 /**
- *  This is a JavaBean to demonstrate using beans with JSP.
+ *  Represents a Player object.
  *
  *@author    mHall
  */
 public class Player extends Object {
 
-    private  int  ownedPot;
-    private String name;
-
+    private int ownedPot;
+    private int playerNumber;
 
     /**
      *  Constructor for the Player object
      */
     public Player() {
-        ownedPot = 10;
+        ownedPot = 3;
     }
-
 
     /**
      *  Gets the ownedPot attribute of the Player object
      *
      *@return    The mySpecialData value
      */
-    public String getOwnedPot() {
+    public int getOwnedPot() {
         return ownedPot;
     }
-
 
     /**
      *  Sets the mySpecialData attribute of the Player object
      *
-     *@param  ownedPot  The new mySpecialData value
+     *@param  ownedPot  The new ownedPot value
      */
-    public void setOwnedPot(String ownedPot) {
-        this.mySpecialData = ownedPot;
+    public void setOwnedPot(int ownedPot) {
+        this.ownedPot = ownedPot;
     }
 
     /**
-     * Gets the name attribute of the Player object
+     * Gets the playerNumber attribute of the Player object
      *
-     * @return name of player
+     * @return player number
      */
-    public int getName() {
-        return name;
+    public int getPlayerNumber() {
+        return playerNumber;
     }
 
-    /** Sets the name attribute of the Player object
+    /** Sets the playerNumber attribute of the Player object
      *
-     * @param name name of player
+     * @param playerNumber player number
      */
-    public void getName(int name) {
-        this.name = name;
+    public void setPlayerNumber(int playerNumber) {
+        this.playerNumber = playerNumber;
     }
-
 }
