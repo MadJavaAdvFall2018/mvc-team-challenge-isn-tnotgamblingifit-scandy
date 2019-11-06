@@ -1,0 +1,39 @@
+
+
+body {
+    background-color: #b9ff99;
+}
+
+/* the dice block css */
+#one {
+    background: red;
+}
+
+#three {
+    background: url("images/c.png");
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+#four {
+    background: white;
+}
+
+#five {
+    background: blue;
+}
+
+#dice_grid {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    justify-content: center;
+    grid-gap: 5px;
+
+}
+
+article div {
+    border: 2px solid black;
+    min-width: 20em;
+    min-height: 20em;
+    border-radius: 50px;
+}
