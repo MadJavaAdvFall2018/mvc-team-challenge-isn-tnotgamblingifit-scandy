@@ -9,19 +9,19 @@ import java.util.*;
 public class Player extends Object {
 
     private  int  ownedPot;
-    private string name;
+    private String name;
 
 
     /**
-     *  Constructor for the BeanOne object
+     *  Constructor for the Player object
      */
     public Player() {
-        ownedPot  = 10;
+        ownedPot = 10;
     }
 
 
     /**
-     *  Gets the ownedPot attribute of the BeanOne object
+     *  Gets the ownedPot attribute of the Player object
      *
      *@return    The mySpecialData value
      */
@@ -31,12 +31,29 @@ public class Player extends Object {
 
 
     /**
-     *  Sets the mySpecialData attribute of the BeanOne object
+     *  Sets the mySpecialData attribute of the Player object
      *
      *@param  ownedPot  The new mySpecialData value
      */
     public void setOwnedPot(String ownedPot) {
         this.mySpecialData = ownedPot;
+    }
+
+    /**
+     * Gets the name attribute of the Player object
+     *
+     * @return name of player
+     */
+    public int getName() {
+        return name;
+    }
+
+    /** Sets the name attribute of the Player object
+     *
+     * @param name name of player
+     */
+    public void getName(int name) {
+        this.name = name;
     }
 
 }
