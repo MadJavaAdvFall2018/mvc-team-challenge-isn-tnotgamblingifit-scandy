@@ -9,6 +9,7 @@ import java.util.*;
 public class Player extends Object {
 
     private  int  ownedPot;
+    private string name;  
 
 
     /**

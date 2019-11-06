@@ -1,5 +1,6 @@
 package java112.project3;
 import java.util.*;
+import java.util.concurrent.ThreadLocalRandom;
 
 /**
  *  This is a JavaBean to demonstrate using beans with JSP.
@@ -9,7 +10,7 @@ import java.util.*;
 public class DiceEngine extends Object {
 
     private  int  centerPot;
-    private int numberOfPlayers;
+    private ArrayList<Player> playerList;
 
 
     /**
@@ -21,7 +22,15 @@ public class DiceEngine extends Object {
 
 
    public void setNumberOfPlayers(int playerCount) {
-       numberOfPlayers = playerCount;
+    int i = 0;   
+    for (i <= playerCount) {
+        Player newPlayer = new Player();
+        newPlayer.setName = i;
+       }
+   }
+
+   public void rollDice(Player activePlayer){
+        int generateRoll = ThreadLocalRandom.current().nextInt(1,10);
    }
 
 }
