@@ -2,38 +2,58 @@
 
 body {
     background-color: #b9ff99;
+    display: grid;
+}
+
+header {
+    text-align: center;
+}
+
+main {
+    align-self: end;
+}
+
+footer {
+
 }
 
 /* the dice block css */
-#one {
+#d1, #d2 {
     background: red;
 }
 
-#three {
+#d3 {
     background: url("images/c.png");
     background-repeat: no-repeat;
     background-size: 100%;
 }
 
-#four {
+#d4 {
     background: white;
 }
 
-#five {
+#d5, #d6 {
     background: blue;
 }
 
-#dice_grid {
+.dice_grid {
     display: grid;
     grid-template-columns: auto auto auto;
     justify-content: center;
     grid-gap: 5px;
 
 }
-
-article div {
+/* dice size */
+.dice {
     border: 2px solid black;
     min-width: 20em;
     min-height: 20em;
     border-radius: 50px;
+}
+
+#otherValues {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    justify-content: center;
+    grid-gap: 5px;
 }
