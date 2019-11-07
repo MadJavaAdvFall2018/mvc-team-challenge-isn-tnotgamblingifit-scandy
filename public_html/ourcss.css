@@ -3,6 +3,7 @@
 body {
     background-color: #b9ff99;
     display: grid;
+    font-weight: bold;
 }
 
 header {
@@ -17,6 +18,23 @@ footer {
 
 }
 
+div {
+    min-width: 20em;
+    min-height: 20em;
+}
+
+a {
+    margin-top: 3em;
+}
+
+/* above the dice */
+.center {
+    text-align: center;
+}
+
+#right {
+    text-align: right;
+}
 /* the dice block css */
 #d1, #d2 {
     background: red;
@@ -51,9 +69,13 @@ footer {
     border-radius: 50px;
 }
 
-#otherValues {
-    display: grid;
-    grid-template-columns: auto auto auto;
-    justify-content: center;
-    grid-gap: 5px;
+
+/* roll button */
+#roll {
+    padding: .5em;
+    background-color: purple;
+    color: white;
+    font-size: 2em;
+    border-radius: 7px;
+    margin-top: 1em;
 }

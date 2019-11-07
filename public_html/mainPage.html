@@ -13,33 +13,33 @@
           <h2>change the file type back to jsp after layout is figured out</h2>
     </header>
 
-    <main>
+    <main class="dice_grid">
     <!-- <p>Data from my bean: ${myCoolBean.mySpecialData}</p> -->
-        <article id="otherValues">
-            <div>sfghkla</div>
-            <div>;fgd;jk</div>
-            <div>fgf</div>
-        </article>
 
-        <article class="dice_grid">
+            <div>${left}</div>
+            <div class="center">${pot}</div>
+            <div id="right">${right}</div>
+
+
+
             <div class="dice" id="d1"></div>
             <div class="dice" id="d4"></div>
             <div class="dice" id="d5"></div>
             <!-- <div id="d${value1}"> </div>
             <div id="d${value2}"> </div>
             <div id="d${value3}"> </div>  -->
-        </article>
 
 
-        <ar
-        <a href="/java112">Home</a>
+
+
+            <a href="/java112">Home</a>
+            <form class="center" action="#" method="post">
+                <input id="roll" type="submit" value="Roll Dice"/>
+            </form>
     </main>
-    <form action="#" method="post">
-        <button type="submit" value="submit">
-            <footer>
-                Roll Dice!
-            </footer>
-        </button>
-    </form>
+
+    <footer>
+
+    </footer>
   </body>
 </html>
