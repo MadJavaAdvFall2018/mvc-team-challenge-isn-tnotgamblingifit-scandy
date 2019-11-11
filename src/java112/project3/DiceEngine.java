@@ -167,8 +167,6 @@ public class DiceEngine extends Object {
         } else if (activePlayer.getOwnedPot() == 1) {
             activePlayer.setDiceOne(ThreadLocalRandom.current().nextInt(1,6));
             checkRolls(activePlayer, activePlayer.getDiceOne());
-
-
         }
     }
 
