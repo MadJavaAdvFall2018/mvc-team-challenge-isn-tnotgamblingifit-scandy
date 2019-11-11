@@ -13,6 +13,106 @@ public class DiceEngine extends Object {
     private int centerPot;
     private ArrayList<Player> playerList;
     private String result;
+    private int generateRoll1 = ThreadLocalRandom.current().nextInt(1,6);
+    private int generateRoll2 = ThreadLocalRandom.current().nextInt(1,6);
+    private int generateRoll3 = ThreadLocalRandom.current().nextInt(1,6);
+
+    /**
+    * Returns value of centerPot
+    * @return
+    */
+    public int getCenterPot() {
+        return centerPot;
+    }
+
+    /**
+    * Sets new value of centerPot
+    * @param
+    */
+    public void setCenterPot(int centerPot) {
+        this.centerPot = centerPot;
+    }
+
+    /**
+    * Returns value of playerList
+    * @return
+    */
+    public ArrayList<Player> getPlayerList() {
+        return playerList;
+    }
+
+    /**
+    * Sets new value of playerList
+    * @param
+    */
+    public void setPlayerList(ArrayList<Player> playerList) {
+        this.playerList = playerList;
+    }
+
+    /**
+    * Returns value of result
+    * @return
+    */
+    public String getResult() {
+        return result;
+    }
+
+    /**
+    * Sets new value of result
+    * @param
+    */
+    public void setResult(String result) {
+        this.result = result;
+    }
+
+    /**
+    * Returns value of generateRoll1
+    * @return
+    */
+    public int getGenerateRoll1() {
+        return generateRoll1;
+    }
+
+    /**
+    * Sets new value of generateRoll1
+    * @param
+    */
+    public void setGenerateRoll1(int generateRoll1) {
+        this.generateRoll1 = generateRoll1;
+    }
+
+    /**
+    * Returns value of generateRoll2
+    * @return
+    */
+    public int getGenerateRoll2() {
+        return generateRoll2;
+    }
+
+    /**
+    * Sets new value of generateRoll2
+    * @param
+    */
+    public void setGenerateRoll2(int generateRoll2) {
+        this.generateRoll2 = generateRoll2;
+    }
+
+    /**
+    * Returns value of generateRoll3
+    * @return
+    */
+    public int getGenerateRoll3() {
+        return generateRoll3;
+    }
+
+    /**
+    * Sets new value of generateRoll3
+    * @param
+    */
+    public void setGenerateRoll3(int generateRoll3) {
+        this.generateRoll3 = generateRoll3;
+    }
+}
 
     /**
      *  Constructor for the DiceEngine object
@@ -23,17 +123,21 @@ public class DiceEngine extends Object {
     }
 
     public void createPlayers(int playerCount) {
-        int i = 0; // int i will be initialized to 0 each time we call this function; is that OK, or should I edit this?
+        int i = 0;
         for (i <= playerCount) {
             Player newPlayer = new Player();
             newPlayer.setPlayerNumber = i;
-            playerList.add(newPlayer); // I am adding the new player to the playerList array
-            i++; // I incremented the player number so that not all players will be named "0"
+            playerList.add(newPlayer);
+            i++;
         }
     }
 
-    public void rollDice(Player activePlayer) { // how do we know who the active player is
-        int generateRoll = ThreadLocalRandom.current().nextInt(1,6);
+    public void rollDice(Player activePlayer) {
+
+        if (generateRoll1 == 5 && generateRoll2 == 5 && generateRoll3 == 5) {
+            activePlayer.setOwnedPot(activePlayer.getOwnedPot() + centerPot);
+            centerPot = 0;
+        }
 
         // I got this information from dicegamedepot.com/lcr-dice-game-rules/
         if (generateRoll == 1 || generateRoll == 2 || generateRoll == 3) {
@@ -67,7 +171,6 @@ public class DiceEngine extends Object {
     public void center() {
         activePlayer.setOwnedPot = ownedPot - 1;
         centerPot++;
-
     }
 
     public void right() {
@@ -85,4 +188,3 @@ public class DiceEngine extends Object {
 
 
     }
-}
