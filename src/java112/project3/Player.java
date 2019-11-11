@@ -22,14 +22,14 @@ public class Player extends Object {
     /**
      *  Gets the ownedPot attribute of the Player object
      *
-     *@return    The mySpecialData value
+     *@return    The ownedPot value
      */
     public int getOwnedPot() {
         return ownedPot;
     }
 
     /**
-     *  Sets the mySpecialData attribute of the Player object
+     *  Sets the ownedPot attribute of the Player object
      *
      *@param  ownedPot  The new ownedPot value
      */

@@ -13,9 +13,27 @@ public class DiceEngine extends Object {
     private int centerPot;
     private ArrayList<Player> playerList;
     private String result;
-    private int generateRoll1 = ThreadLocalRandom.current().nextInt(1,6);
-    private int generateRoll2 = ThreadLocalRandom.current().nextInt(1,6);
-    private int generateRoll3 = ThreadLocalRandom.current().nextInt(1,6);
+    private int generateRoll1; 
+    private int generateRoll2; 
+    private int generateRoll3;
+     
+
+    /**
+     *  Constructor for the DiceEngine object
+     */
+    public DiceEngine() {
+        playerList = new ArrayList<Player>();
+        Player playerOne = new Player();
+        playerList.add(playerOne);
+    
+        Player playerTwo = new Player();
+        playerList.add(playerTwo);
+        
+        Player playerThree = new Player();
+        playerList.add(playerThree);
+        centerPot = 0;
+    }
+
 
     /**
     * Returns value of centerPot
@@ -113,32 +131,22 @@ public class DiceEngine extends Object {
         this.generateRoll3 = generateRoll3;
     }
 
-    /**
-     *  Constructor for the DiceEngine object
-     */
-    public DiceEngine() {
-        playerList = new ArrayList<Player>();
-        centerPot = 0;
-    }
+    public void run() {
+        for(Player player : playerList) {
+            generateRolls(plater);
 
-    public void createPlayers(int playerCount) {
-        int i = 0;
-        for (i <= playerCount) {
-            Player newPlayer = new Player();
-            newPlayer.setPlayerNumber = i;
-            playerList.add(newPlayer);
-            i++;
         }
     }
 
-    public void rollDice(Player activePlayer) {
-
-        if (generateRoll1 == 5 && generateRoll2 == 5 && generateRoll3 == 5) {
-            activePlayer.setOwnedPot(activePlayer.getOwnedPot() + centerPot);
-            centerPot = 0;
+    public void generateRolls(Player activePlayer) {
+        //TOD roll 3 dice
+        if (getGenerateRoll1() == 5 && getGenerateRoll2() == 5 && getGenerateRoll3() == 5) {
+            threeCenter(activePlayer);
         }
+    }
 
-        // I got this information from dicegamedepot.com/lcr-dice-game-rules/
+    public void checkRolls(Player activePlayer, int generateRoll) {
+
         if (generateRoll == 1 || generateRoll == 2 || generateRoll == 3) {
             result = "Dot";
         } else if (generateRoll == 4) {
@@ -151,6 +159,16 @@ public class DiceEngine extends Object {
             result = "Right";
             right(activePlayer);
         }
+    }
+
+    public void threeCenter(Player activePlayer) {
+            activePlayer.setOwnedPot(activePlayer.getOwnedPot() + centerPot);
+            centerPot = 0;
+     
+    }
+
+    public void rollTwoDice(Player activPlayer) {
+
     }
 
     public void left(Player activePlayer) {
