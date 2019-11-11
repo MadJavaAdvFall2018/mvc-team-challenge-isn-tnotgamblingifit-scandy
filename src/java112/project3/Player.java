@@ -11,6 +11,33 @@ public class Player extends Object {
 
     private int ownedPot;
     private int playerNumber;
+    private int diceOne;
+    private int diceTwo;
+    private int diceThree;
+
+    public int getDiceOne() {
+        return this.diceOne;
+    }
+
+    public void setDiceOne(int diceOne) {
+        this.diceOne = diceOne;
+    }
+
+    public int getDiceTwo() {
+        return this.diceTwo;
+    }
+
+    public void setDiceTwo(int diceTwo) {
+        this.diceTwo = diceTwo;
+    }
+
+    public int getDiceThree() {
+        return this.diceThree;
+    }
+
+    public void setDiceThree(int diceThree) {
+        this.diceThree = diceThree;
+    }
 
     /**
      *  Constructor for the Player object
