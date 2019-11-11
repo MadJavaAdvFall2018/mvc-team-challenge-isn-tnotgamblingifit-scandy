@@ -13,11 +13,12 @@ import javax.servlet.annotation.*;
     name = "leftCenterRight",
     urlPatterns = { "/lcr" }
 )
-public class LeftCenterRight extends HttpServlet {
-
+public class LeftCenterRightServlet extends HttpServlet {
+    // instance variables
+    private DiceEngine engine;
 
     public void init() {
-        DiceEngine engine = new DiceEngine();
+        engine = new DiceEngine();
     }
     /**
      * Handles HTTP GET Requests
@@ -30,8 +31,8 @@ public class LeftCenterRight extends HttpServlet {
     public void doPost(HttpServletRequest request, HttpServletResponse response)
         throws ServletException, IOException {
 
-            engine.run();
             request.setAttribute("engine", engine);
+            engine.run();
 
             String url = "/mainPage.jsp";
 

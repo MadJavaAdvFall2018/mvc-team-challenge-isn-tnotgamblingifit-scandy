@@ -25,7 +25,6 @@ public class DiceEngine extends Object {
      */
     public DiceEngine() {
         playerList = new ArrayList<Player>();
-
         Player playerOne = new Player();
         playerOne.setPlayerNumber(1);
         playerList.add(playerOne);
@@ -37,7 +36,6 @@ public class DiceEngine extends Object {
         Player playerThree = new Player();
         playerThree.setPlayerNumber(3);
         playerList.add(playerThree);
-
         centerPot = 0;
     }
 
@@ -141,7 +139,6 @@ public class DiceEngine extends Object {
     public void run() {
         for(Player player : playerList) {
             generateRolls(player);
-
         }
     }
 
@@ -197,18 +194,18 @@ public class DiceEngine extends Object {
     public void left(Player activePlayer) {
         Player leftPlayer;
 
-        activePlayer.setOwnedPot(activePlayer.getOwnedPot() - 1);
-        if (activePlayer.getPlayerNumber() != (playerList.size() - 1)) {
+        activePlayer.setOwnedPot = ownedPot - 1;
+        if (activePlayer.getPlayerNumber() != (playerList.length() - 1)) {
             leftPlayer = playerList.get(activePlayer.getPlayerNumber() + 1);
-            leftPlayer.setOwnedPot(leftPlayer.getOwnedPot() + 1);
+            leftPlayer.setOwnedPot(ownedPot++);
         } else {
             leftPlayer = playerList.get(0);
-            leftPlayer.setOwnedPot(leftPlayer.getOwnedPot() + 1);
+            leftPlayer.setOwnedPot(ownedPot++);
         }
     }
 
     public void center(Player activePlayer) {
-        activePlayer.setOwnedPot(activePlayer.getOwnedPot() - 1);
+        activePlayer.setOwnedPot = ownedPot - 1;
         centerPot++;
     }
 
@@ -216,13 +213,13 @@ public class DiceEngine extends Object {
         // local variables
         Player rightPlayer;
 
-        activePlayer.setOwnedPot(activePlayer.getOwnedPot() - 1);
-        if (activePlayer.getPlayerNumber() != 0) {
+        activePlayer.setOwnedPot = ownedPot - 1;
+        if (activePlayer.getPlayerNumber != 0) {
             rightPlayer = playerList.get(activePlayer.getPlayerNumber() - 1);
-            rightPlayer.setOwnedPot(rightPlayer.getOwnedPot() + 1);
+            rightPlayer.setOwnedPot(ownedPot++);
         } else {
-            rightPlayer = playerList.get(playerList.size() - 1);
-            rightPlayer.setOwnedPot(rightPlayer.getOwnedPot() + 1);
+            rightPlayer = playerList.get(playerList.length() - 1);
+            rightPlayer.setOwnedPot(ownedPot++);
         }
     }
 }
