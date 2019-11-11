@@ -186,10 +186,6 @@ public class DiceEngine extends Object {
      
     }
 
-    public void rollTwoDice(Player activPlayer) {
-
-    }
-
     public void left(Player activePlayer) {
         Player leftPlayer;
 
