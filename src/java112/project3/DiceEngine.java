@@ -139,10 +139,19 @@ public class DiceEngine extends Object {
     }
 
     public void generateRolls(Player activePlayer) {
-        //TOD roll 3 dice
-        if (getGenerateRoll1() == 5 && getGenerateRoll2() == 5 && getGenerateRoll3() == 5) {
-            threeCenter(activePlayer);
-        }
+        if (activePlayer.getOwnedPot() => 3) {
+            generateRoll1 = ThreadLocalRandom.current().nextInt(1,6);
+            generateRoll2 = ThreadLocalRandom.current().nextInt(1,6);
+            generateRoll3 = ThreadLocalRandom.current().nextInt(1,6);
+            if (getGenerateRoll1() == 5 && getGenerateRoll2() == 5 && getGenerateRoll3() == 5) {
+                threeCenter(activePlayer);
+            }
+        } else if (activePlayer.getOwnedPot() == 2) {
+            generateRoll1 = ThreadLocalRandom.current().nextInt(1,6);
+            generateRoll2 = ThreadLocalRandom.current().nextInt(1,6);
+        } else if (activePlayer.getOwnedPot() == 1) {
+            generateRoll1 = ThreadLocalRandom.current().nextInt(1,6);
+        } 
     }
 
     public void checkRolls(Player activePlayer, int generateRoll) {
