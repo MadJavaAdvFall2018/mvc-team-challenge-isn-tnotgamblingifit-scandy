@@ -18,16 +18,18 @@
 
 
             <div id="left">
-                <!-- <div class="smallDice"  id="d${playerThree.generateRoll1}"></div>
+                <div class="smallDice"  id="d${playerThree.generateRoll1}"></div>
                 <div></div>
                 <div class="smallDice"  id="d${playerThree.generateRoll2}"></div>
                 <div>${left}</div>
-                <div class="smallDice"  id="d${playerThree.generateRoll3}"></div> -->
+                <div class="smallDice"  id="d${playerThree.generateRoll3}"></div>
+
+                <!-- static html styling
                 <div class="smallDice" id="d1"></div>
                 <div></div>
                 <div class="smallDice" id="d4"></div>
                 <div>${left}</div>
-                <div class="smallDice" id="d5"></div>
+                <div class="smallDice" id="d5"></div> -->
             </div>
 
             <div class="center">
@@ -36,30 +38,31 @@
 
             <div id="right">
 
+                <!-- static html styling
                 <div></div>
                 <div class="smallDice" id="d1"></div>
                 <div>${right}</div>
                 <div class="smallDice" id="d4"></div>
                 <div></div>
-                <div class="smallDice" id="d5"></div>
+                <div class="smallDice" id="d5"></div> -->
 
 
-                <!-- <div></div>
+                <div></div>
                 <div class="smallDice" id="d${playerTwo.generateRoll1}"></div>
                 <div>${right}</div>
                 <div class="smallDice" id="d${playerTwo.generateRoll2}"></div>
                 <div></div>
-                <div class="smallDice" id="d${playerTwo.generateRoll3}"></div> -->
+                <div class="smallDice" id="d${playerTwo.generateRoll3}"></div>
             </div>
 
 
-
+            <!-- static html styling
             <div class="dice" id="d1"></div>
             <div class="dice" id="d4"></div>
-            <div class="dice" id="d5"></div>
-            <!-- <div id="d${playerOne.generateRoll1}"></div>
+            <div class="dice" id="d5"></div> -->
+            <div id="d${playerOne.generateRoll1}"></div>
             <div id="d${playerOne.generateRoll2}"> </div>
-            <div id="d${playerOne.generateRoll3}"> </div>  -->
+            <div id="d${playerOne.generateRoll3}"> </div>
 
 
 
