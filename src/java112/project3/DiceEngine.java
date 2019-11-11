@@ -13,24 +13,23 @@ public class DiceEngine extends Object {
     private int centerPot;
     private ArrayList<Player> playerList;
     private String result;
-    private int generateRoll1; 
-    private int generateRoll2; 
-    private int generateRoll3;
      
-
     /**
      *  Constructor for the DiceEngine object
      */
     public DiceEngine() {
         playerList = new ArrayList<Player>();
         Player playerOne = new Player();
+        playerOne.setPlayerNumber(1);
         playerList.add(playerOne);
     
         Player playerTwo = new Player();
+        playerOne.setPlayerNumber(2);        
         playerList.add(playerTwo);
         
         Player playerThree = new Player();
         playerList.add(playerThree);
+        playerOne.setPlayerNumber(3);
         centerPot = 0;
     }
 
@@ -133,24 +132,35 @@ public class DiceEngine extends Object {
 
     public void run() {
         for(Player player : playerList) {
-            generateRolls(plater);
+            generateRolls(player);
 
         }
     }
 
     public void generateRolls(Player activePlayer) {
         if (activePlayer.getOwnedPot() => 3) {
-            generateRoll1 = ThreadLocalRandom.current().nextInt(1,6);
-            generateRoll2 = ThreadLocalRandom.current().nextInt(1,6);
-            generateRoll3 = ThreadLocalRandom.current().nextInt(1,6);
+            activePlaater.setDiceOne(ThreadLocalRandom.current().nextInt(1,6));
+            activePlaater.setDiceTwo(ThreadLocalRandom.current().nextInt(1,6));
+            activePlaater.setDiceThree(ThreadLocalRandom.current().nextInt(1,6));
             if (getGenerateRoll1() == 5 && getGenerateRoll2() == 5 && getGenerateRoll3() == 5) {
                 threeCenter(activePlayer);
+            } else {
+                checkRolls(activePlayer, activePlayer.getDiceOne());
+                checkRolls(activePlayer, activePlayer.getDiceTwo());
+                checkRolls(activePlayer, activePlayer.getDiceThree());
             }
         } else if (activePlayer.getOwnedPot() == 2) {
-            generateRoll1 = ThreadLocalRandom.current().nextInt(1,6);
-            generateRoll2 = ThreadLocalRandom.current().nextInt(1,6);
+            activePlaater.setDiceOne(ThreadLocalRandom.current().nextInt(1,6));
+            activePlaater.setDiceTwo(ThreadLocalRandom.current().nextInt(1,6));
+
+            checkRolls(activePlayer, activePlayer.getDiceOne());
+            checkRolls(activePlayer, activePlayer.getDiceTwo());
+
         } else if (activePlayer.getOwnedPot() == 1) {
-            generateRoll1 = ThreadLocalRandom.current().nextInt(1,6);
+            activePlaater.setDiceOne(ThreadLocalRandom.current().nextInt(1,6));
+            checkRolls(activePlayer, activePlayer.getDiceOne());
+            
+
         } 
     }
 
@@ -181,7 +191,6 @@ public class DiceEngine extends Object {
     }
 
     public void left(Player activePlayer) {
-        // local variables
         Player leftPlayer;
 
         activePlayer.setOwnedPot = ownedPot - 1;
@@ -194,12 +203,12 @@ public class DiceEngine extends Object {
         }
     }
 
-    public void center() {
+    public void center(Player activePlayer) {
         activePlayer.setOwnedPot = ownedPot - 1;
         centerPot++;
     }
 
-    public void right() {
+    public void right(Player activePlayer) {
         // local variables
         Player rightPlayer;
 
