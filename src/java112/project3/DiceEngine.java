@@ -112,7 +112,6 @@ public class DiceEngine extends Object {
     public void setGenerateRoll3(int generateRoll3) {
         this.generateRoll3 = generateRoll3;
     }
-}
 
     /**
      *  Constructor for the DiceEngine object
@@ -185,6 +184,5 @@ public class DiceEngine extends Object {
             rightPlayer = playerList.get(playerList.length() - 1);
             rightPlayer.setOwnedPot(ownedPot++);
         }
-
-
     }
+}
