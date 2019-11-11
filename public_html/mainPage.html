@@ -16,8 +16,17 @@
     <main class="dice_grid">
     <!-- <p>Data from my bean: ${myCoolBean.mySpecialData}</p> -->
 
-            <div>${left}</div>
-            <div class="center">${pot}</div>
+            <div>
+                <div>${left}</div>
+                <div id="d${value1}"> </div>
+                <div id="d${value2}"> </div>
+                <div id="d${value3}"> </div>
+
+            </div>
+
+            <div class="center">
+                ${centerPot}
+            </div>
             <div id="right">${right}</div>
 
 
