@@ -44,7 +44,7 @@ public class DiceEngine extends Object {
 
     /**
     * Sets new value of centerPot
-    * @param
+    * @param centerPot number of coins in the center 
     */
     public void setCenterPot(int centerPot) {
         this.centerPot = centerPot;
