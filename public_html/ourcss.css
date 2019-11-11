@@ -14,9 +14,9 @@ main {
     align-self: end;
 }
 
-footer {
+/* footer {
 
-}
+} */
 
 div {
     min-width: 20em;
@@ -28,7 +28,7 @@ a {
 }
 
 /* above the dice */
-.center {
+#centerPot {
     text-align: center;
 }
 

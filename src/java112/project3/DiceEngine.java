@@ -186,10 +186,6 @@ public class DiceEngine extends Object {
      
     }
 
-    public void rollTwoDice(Player activPlayer) {
-
-    }
-
     public void left(Player activePlayer) {
         Player leftPlayer;
 
@@ -220,8 +216,5 @@ public class DiceEngine extends Object {
             rightPlayer = playerList.get(playerList.length() - 1);
             rightPlayer.setOwnedPot(ownedPot++);
         }
-
-
     }
-
 }
