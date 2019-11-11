@@ -23,7 +23,7 @@ public class LeftCenterRight extends HttpServlet {
      * @exception ServletException if a Servlet failure occurs
      * @exception IOException if an IO failure occurs
      */
-    public void doGet(HttpServletRequest request, HttpServletResponse response)
+    public void doPost(HttpServletRequest request, HttpServletResponse response)
         throws ServletException, IOException {
 
 
