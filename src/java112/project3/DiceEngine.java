@@ -40,7 +40,6 @@ public class DiceEngine extends Object {
     }
 
 
-
     public void run() {
         for(Player player : playerList) {
             generateRolls(player);
@@ -100,7 +99,7 @@ public class DiceEngine extends Object {
 
         activePlayer.setOwnedPot(activePlayer.getOwnedPot() - 1);
         if (activePlayer.getPlayerNumber() != (playerList.size())) {
-            leftPlayer = playerList.get(activePlayer.getPlayerNumber() + 1);
+            leftPlayer = playerList.get(activePlayer.getPlayerNumber());
             leftPlayer.setOwnedPot(leftPlayer.getOwnedPot() + 1);
         } else {
             leftPlayer = playerList.get(0);
