@@ -18,11 +18,11 @@
 
 
             <div id="left">
-                <div class="smallDice"  id="d${playerThree.generateRoll1}"></div>
+                <div class="smallDice"  id="d${playerThree.diceOne}"></div>
                 <div></div>
-                <div class="smallDice"  id="d${playerThree.generateRoll2}"></div>
-                <div>${left}</div>
-                <div class="smallDice"  id="d${playerThree.generateRoll3}"></div>
+                <div class="smallDice"  id="d${playerThree.diceTwo}"></div>
+                <div>${playerThree.ownedPot}</div>
+                <div class="smallDice"  id="d${playerThree.diceThree}"></div>
 
                 <!-- static html styling
                 <div class="smallDice" id="d1"></div>
@@ -48,21 +48,21 @@
 
 
                 <div></div>
-                <div class="smallDice" id="d${playerTwo.generateRoll1}"></div>
-                <div>${right}</div>
-                <div class="smallDice" id="d${playerTwo.generateRoll2}"></div>
+                <div class="smallDice" id="d${playerTwo.diceOne}"></div>
+                <div>${playerTwo.ownedPot}</div>
+                <div class="smallDice" id="d${playerTwo.diceTwo}"></div>
                 <div></div>
-                <div class="smallDice" id="d${playerTwo.generateRoll3}"></div>
+                <div class="smallDice" id="d${playerTwo.diceThree}"></div>
             </div>
 
 
-            <!-- static html styling
-            <div class="dice" id="d1"></div>
+            static html styling
+            <!-- <div class="dice" id="d1"></div>
             <div class="dice" id="d4"></div>
             <div class="dice" id="d5"></div> -->
-            <div id="d${playerOne.generateRoll1}"></div>
-            <div id="d${playerOne.generateRoll2}"> </div>
-            <div id="d${playerOne.generateRoll3}"> </div>
+            <div id="d${playerOne.diceOne}"></div>
+            <div id="d${playerOne.diceTwo}"> </div>
+            <div id="d${playerOne.diceThree}"> </div>
 
 
 
@@ -71,6 +71,7 @@
             <form class="center" action="#" method="post">
                 <input id="roll" type="submit" value="Roll Dice"/>
             </form>
+            <p class="center">${playerOne.ownedPot}</p>
     </main>
 
     <footer>
