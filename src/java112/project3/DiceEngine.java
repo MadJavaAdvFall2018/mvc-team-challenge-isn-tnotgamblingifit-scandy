@@ -98,7 +98,7 @@ public class DiceEngine extends Object {
         Player leftPlayer;
 
         activePlayer.setOwnedPot(activePlayer.getOwnedPot() - 1);
-        if (activePlayer.getPlayerNumber() != (playerList.size())) {
+        if (activePlayer.getPlayerNumber() != (playerList.size() - 1)) {
             leftPlayer = playerList.get(activePlayer.getPlayerNumber() + 1);
             leftPlayer.setOwnedPot(leftPlayer.getOwnedPot() + 1);
         } else {
