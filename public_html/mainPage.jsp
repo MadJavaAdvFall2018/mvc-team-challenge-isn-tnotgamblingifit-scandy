@@ -60,9 +60,9 @@
             <!-- <div class="dice" id="d1"></div>
             <div class="dice" id="d4"></div>
             <div class="dice" id="d5"></div> -->
-            <div id="d${engine.playerOne.diceOne}"></div>
-            <div id="d${engine.playerOne.diceTwo}"> </div>
-            <div id="d${engine.playerOne.diceThree}"> </div>
+            <div class="dice" id="d${engine.playerOne.diceOne}"></div>
+            <div class="dice" id="d${engine.playerOne.diceTwo}"> </div>
+            <div class="dice" id="d${engine.playerOne.diceThree}"> </div>
 
 
 
