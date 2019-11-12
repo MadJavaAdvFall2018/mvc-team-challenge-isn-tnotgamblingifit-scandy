@@ -68,7 +68,7 @@
 
 
             <a href="/java112">Home</a>
-            <form class="center" action="#" method="post">
+            <form class="center" method="post">
                 <input id="roll" type="submit" value="Roll Dice"/>
             </form>
             <p class="center">${playerOne.ownedPot}</p>

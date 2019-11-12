@@ -148,7 +148,7 @@ public class DiceEngine extends Object {
             activePlayer.setDiceOne(ThreadLocalRandom.current().nextInt(1,6));
             activePlayer.setDiceTwo(ThreadLocalRandom.current().nextInt(1,6));
             activePlayer.setDiceThree(ThreadLocalRandom.current().nextInt(1,6));
-            if (getGenerateRoll1() == 5 && getGenerateRoll2() == 5 && getGenerateRoll3() == 5) {
+            if (activePlayer.setDiceOne() == 5 && activePlayer.getDiceTwo() == 5 && activePlayer.getDiceThree() == 5) {
                 threeCenter(activePlayer);
             } else {
                 checkRolls(activePlayer, activePlayer.getDiceOne());
