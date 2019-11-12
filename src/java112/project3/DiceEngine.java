@@ -8,7 +8,7 @@ import java.util.concurrent.ThreadLocalRandom;
  *
  *@author    mHall
  */
-public class DiceEngine extends Object {
+public class DiceEngine {
 
     private int centerPot;
     private ArrayList<Player> playerList;
@@ -16,7 +16,7 @@ public class DiceEngine extends Object {
     private Player playerOne;
     private Player playerTwo;
     private Player playerThree;
-
+    private String number = "3";
 
     /**
      *  Constructor for the DiceEngine object
@@ -24,15 +24,15 @@ public class DiceEngine extends Object {
     public DiceEngine() {
         playerList = new ArrayList<Player>();
 
-        Player playerOne = new Player();
+        playerOne = new Player();
         playerOne.setPlayerNumber(1);
         playerList.add(playerOne);
 
-        Player playerTwo = new Player();
+        playerTwo = new Player();
         playerTwo.setPlayerNumber(2);
         playerList.add(playerTwo);
 
-        Player playerThree = new Player();
+        playerThree = new Player();
         playerThree.setPlayerNumber(3);
         playerList.add(playerThree);
 
@@ -222,4 +222,16 @@ public class DiceEngine extends Object {
 	public void setPlayerThree(Player playerThree) {
 		this.playerThree = playerThree;
 	}
+
+    public String getNumber() {
+        return number;
+    }
+
+    /**
+    * Sets new value of playerThree
+    * @param
+    */
+    public void setNumber(String number) {
+        this.number = number;
+    }
 }

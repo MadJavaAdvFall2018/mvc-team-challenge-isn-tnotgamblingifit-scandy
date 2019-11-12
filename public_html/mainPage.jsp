@@ -18,11 +18,11 @@
 
 
             <div id="left">
-                <div class="smallDice"  id="d${playerThree.diceOne}"></div>
+                <div class="smallDice"  id="d${engine.playerThree.diceOne}"></div>
                 <div></div>
-                <div class="smallDice"  id="d${playerThree.diceTwo}"></div>
-                <div>${playerThree.ownedPot}</div>
-                <div class="smallDice"  id="d${playerThree.diceThree}"></div>
+                <div class="smallDice"  id="d${engine.playerThree.diceTwo}"></div>
+                <div>${engine.playerThree.ownedPot}</div>
+                <div class="smallDice"  id="d${engine.playerThree.diceThree}">${engine.number}</div>
 
                 <!-- static html styling
                 <div class="smallDice" id="d1"></div>
@@ -33,7 +33,7 @@
             </div>
 
             <div class="center">
-                ${centerPot}
+                ${engine.centerPot}
             </div>
 
             <div id="right">
@@ -48,21 +48,21 @@
 
 
                 <div></div>
-                <div class="smallDice" id="d${playerTwo.diceOne}"></div>
-                <div>${playerTwo.ownedPot}</div>
-                <div class="smallDice" id="d${playerTwo.diceTwo}"></div>
+                <div class="smallDice" id="d${engine.playerTwo.diceOne}"></div>
+                <div>${engine.playerTwo.ownedPot}</div>
+                <div class="smallDice" id="d${engine.playerTwo.diceTwo}"></div>
                 <div></div>
-                <div class="smallDice" id="d${playerTwo.diceThree}"></div>
+                <div class="smallDice" id="d${engine.playerTwo.diceThree}"></div>
             </div>
 
 
-            static html styling
+            <%-- static html styling --%>
             <!-- <div class="dice" id="d1"></div>
             <div class="dice" id="d4"></div>
             <div class="dice" id="d5"></div> -->
-            <div id="d${playerOne.diceOne}"></div>
-            <div id="d${playerOne.diceTwo}"> </div>
-            <div id="d${playerOne.diceThree}"> </div>
+            <div id="d${engine.playerOne.diceOne}"></div>
+            <div id="d${engine.playerOne.diceTwo}"> </div>
+            <div id="d${engine.playerOne.diceThree}"> </div>
 
 
 
@@ -71,7 +71,7 @@
             <form class="center" method="post">
                 <input id="roll" type="submit" value="Roll Dice"/>
             </form>
-            <p class="center">${playerOne.ownedPot}</p>
+            <p class="center">${engine.playerOne.ownedPot}</p>
     </main>
 
     <footer>

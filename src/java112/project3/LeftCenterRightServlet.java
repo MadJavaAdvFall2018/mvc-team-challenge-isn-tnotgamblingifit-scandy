@@ -15,11 +15,11 @@ import javax.servlet.annotation.*;
 )
 public class LeftCenterRightServlet extends HttpServlet {
     // instance variables
-    private DiceEngine engine;
+    // private DiceEngine engine;
 
-    public void init() {
-        engine = new DiceEngine();
-    }
+    // public void init() {
+        DiceEngine engine = new DiceEngine();
+    // }
     /**
      * Handles HTTP GET Requests
      *
@@ -49,8 +49,7 @@ public class LeftCenterRightServlet extends HttpServlet {
     public void doPost(HttpServletRequest request, HttpServletResponse response)
         throws ServletException, IOException {
             engine.run();
-            request.setAttribute("engine", engine);
-
+                        request.setAttribute("engine", engine);
             String url = "/mainPage.jsp";
 
             RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(url);
