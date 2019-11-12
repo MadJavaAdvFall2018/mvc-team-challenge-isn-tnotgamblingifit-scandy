@@ -40,39 +40,6 @@ public class DiceEngine extends Object {
     }
 
 
-    /**
-    * Returns value of centerPot
-    * @return
-    */
-    public int getCenterPot() {
-        return centerPot;
-    }
-
-    /**
-    * Sets new value of centerPot
-    * @param centerPot number of coins in the center
-    */
-    public void setCenterPot(int centerPot) {
-        this.centerPot = centerPot;
-    }
-
-    /**
-    * Returns value of playerList
-    * @return
-    */
-    public ArrayList<Player> getPlayerList() {
-        return playerList;
-    }
-
-    /**
-    * Sets new value of playerList
-    * @param
-    */
-    public void setPlayerList(ArrayList<Player> playerList) {
-        this.playerList = playerList;
-    }
-
-   
     public void run() {
         for(Player player : playerList) {
             generateRolls(player);
@@ -85,7 +52,7 @@ public class DiceEngine extends Object {
             activePlayer.setDiceOne(ThreadLocalRandom.current().nextInt(1,6));
             activePlayer.setDiceTwo(ThreadLocalRandom.current().nextInt(1,6));
             activePlayer.setDiceThree(ThreadLocalRandom.current().nextInt(1,6));
-            if (activePlayer.setDiceOne() == 5 && activePlayer.getDiceTwo() == 5 && activePlayer.getDiceThree() == 5) {
+            if (activePlayer.getDiceOne() == 5 && activePlayer.getDiceTwo() == 5 && activePlayer.getDiceThree() == 5) {
                 threeCenter(activePlayer);
             } else {
                 checkRolls(activePlayer, activePlayer.getDiceOne());
@@ -158,7 +125,6 @@ public class DiceEngine extends Object {
             rightPlayer.setOwnedPot(rightPlayer.getOwnedPot() + 1);
         }
     }
-
 
 
 	/**
