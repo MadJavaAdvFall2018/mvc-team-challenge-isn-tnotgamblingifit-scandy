@@ -175,6 +175,8 @@ public class DiceEngine extends Object {
         }
     }
 
+
+
 	/**
 	* Returns value of centerPot
 	* @return
@@ -270,6 +272,4 @@ public class DiceEngine extends Object {
 	public void setPlayerThree(Player playerThree) {
 		this.playerThree = playerThree;
 	}
-
-
 }
