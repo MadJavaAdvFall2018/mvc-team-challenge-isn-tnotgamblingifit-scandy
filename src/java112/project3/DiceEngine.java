@@ -72,22 +72,6 @@ public class DiceEngine extends Object {
         this.playerList = playerList;
     }
 
-    /**
-    * Returns value of result
-    * @return
-    */
-    public String getResult() {
-        return result;
-    }
-
-    /**
-    * Sets new value of result
-    * @param
-    */
-    public void setResult(String result) {
-        this.result = result;
-    }
-
    
     public void run() {
         for(Player player : playerList) {
