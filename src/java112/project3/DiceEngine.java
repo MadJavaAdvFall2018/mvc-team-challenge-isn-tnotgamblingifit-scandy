@@ -90,54 +90,7 @@ public class DiceEngine extends Object {
         this.result = result;
     }
 
-    /**
-    * Returns value of generateRoll1
-    * @return
-    */
-    public int getGenerateRoll1() {
-        return generateRoll1;
-    }
-
-    /**
-    * Sets new value of generateRoll1
-    * @param
-    */
-    public void setGenerateRoll1(int generateRoll1) {
-        this.generateRoll1 = generateRoll1;
-    }
-
-    /**
-    * Returns value of generateRoll2
-    * @return
-    */
-    public int getGenerateRoll2() {
-        return generateRoll2;
-    }
-
-    /**
-    * Sets new value of generateRoll2
-    * @param
-    */
-    public void setGenerateRoll2(int generateRoll2) {
-        this.generateRoll2 = generateRoll2;
-    }
-
-    /**
-    * Returns value of generateRoll3
-    * @return
-    */
-    public int getGenerateRoll3() {
-        return generateRoll3;
-    }
-
-    /**
-    * Sets new value of generateRoll3
-    * @param
-    */
-    public void setGenerateRoll3(int generateRoll3) {
-        this.generateRoll3 = generateRoll3;
-    }
-
+   
     public void run() {
         for(Player player : playerList) {
             generateRolls(player);
@@ -196,7 +149,7 @@ public class DiceEngine extends Object {
         Player leftPlayer;
 
         activePlayer.setOwnedPot(activePlayer.getOwnedPot() - 1);
-        if (activePlayer.getPlayerNumber() != (playerList.size() - 1)) {
+        if (activePlayer.getPlayerNumber() != (playerList.size())) {
             leftPlayer = playerList.get(activePlayer.getPlayerNumber() + 1);
             leftPlayer.setOwnedPot(leftPlayer.getOwnedPot() + 1);
         } else {
