@@ -22,7 +22,7 @@
                 <div></div>
                 <div class="smallDice"  id="d${engine.playerThree.diceTwo}"></div>
                 <div>${engine.playerThree.ownedPot}</div>
-                <div class="smallDice"  id="d${engine.playerThree.diceThree}">${engine.number}</div>
+                <div class="smallDice"  id="d${engine.playerThree.diceThree}"></div>
 
                 <!-- static html styling
                 <div class="smallDice" id="d1"></div>
