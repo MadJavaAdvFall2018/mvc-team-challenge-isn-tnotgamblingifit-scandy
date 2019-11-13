@@ -211,7 +211,7 @@ public class DiceEngine {
 
         activePlayer.setOwnedPot(activePlayer.getOwnedPot() - 1);
         if (activePlayer.getPlayerNumber() != (playerList.size())) {
-            rightPlayer = playerList.get(activePlayer.getPlayerPosition()); //this is not okay. ArrayList values:0,1,2  Player numbers:1,2,3
+            rightPlayer = playerList.get(activePlayer.getPlayerPosition() + 1); //this is not okay. ArrayList values:0,1,2  Player numbers:1,2,3
             rightPlayer.setOwnedPot(rightPlayer.getOwnedPot() + 1);
         } else {
             rightPlayer = playerList.get(0);
@@ -233,7 +233,7 @@ public class DiceEngine {
             leftPlayer = playerList.get(activePlayer.getPlayerPosition() - 1);
             leftPlayer.setOwnedPot(leftPlayer.getOwnedPot() + 1);
         } else {
-            leftPlayer = playerList.get(playerList.size() - 1);
+            leftPlayer = playerList.get(2);
             leftPlayer.setOwnedPot(leftPlayer.getOwnedPot() + 1);
         }
     }
