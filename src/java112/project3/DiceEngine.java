@@ -206,16 +206,16 @@ public class DiceEngine {
 
     }
 
-    public void left(Player activePlayer) {
-        Player leftPlayer;
+    public void right(Player activePlayer) {
+        Player rightPlayer;
 
         activePlayer.setOwnedPot(activePlayer.getOwnedPot() - 1);
         if (activePlayer.getPlayerNumber() != (playerList.size())) {
-            leftPlayer = playerList.get(activePlayer.getPlayerPosition()); //this is not okay. ArrayList values:0,1,2  Player numbers:1,2,3
-            leftPlayer.setOwnedPot(leftPlayer.getOwnedPot() + 1);
+            rightPlayer = playerList.get(activePlayer.getPlayerPosition()); //this is not okay. ArrayList values:0,1,2  Player numbers:1,2,3
+            rightPlayer.setOwnedPot(rightPlayer.getOwnedPot() + 1);
         } else {
-            leftPlayer = playerList.get(0);
-            leftPlayer.setOwnedPot(leftPlayer.getOwnedPot() + 1);
+            rightPlayer = playerList.get(0);
+            rightPlayer.setOwnedPot(rightPlayer.getOwnedPot() + 1);
         }
     }
 
@@ -224,17 +224,17 @@ public class DiceEngine {
         centerPot++;
     }
 
-    public void right(Player activePlayer) {
+    public void left(Player activePlayer) {
         // local variables
-        Player rightPlayer;
+        Player leftPlayer;
 
         activePlayer.setOwnedPot(activePlayer.getOwnedPot() - 1);
-        if (activePlayer.getPlayerNumber() != 0) {
-            rightPlayer = playerList.get(activePlayer.getPlayerNumber() - 1);
-            rightPlayer.setOwnedPot(rightPlayer.getOwnedPot() + 1);
+        if (activePlayer.getPlayerPosition() != 0) {
+            leftPlayer = playerList.get(activePlayer.getPlayerPosition() - 1);
+            leftPlayer.setOwnedPot(leftPlayer.getOwnedPot() + 1);
         } else {
-            rightPlayer = playerList.get(playerList.size() - 1);
-            rightPlayer.setOwnedPot(rightPlayer.getOwnedPot() + 1);
+            leftPlayer = playerList.get(playerList.size() - 1);
+            leftPlayer.setOwnedPot(leftPlayer.getOwnedPot() + 1);
         }
     }
 
