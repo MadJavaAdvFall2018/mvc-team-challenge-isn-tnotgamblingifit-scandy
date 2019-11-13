@@ -15,7 +15,8 @@ import javax.servlet.annotation.*;
 )
 public class LeftCenterRightServlet extends HttpServlet {
     // instance variables
-    DiceEngine engine = new DiceEngine();
+    DiceEngine engine;
+     // = new DiceEngine();
 
     /**
      * Handles HTTP GET Requests
@@ -27,7 +28,7 @@ public class LeftCenterRightServlet extends HttpServlet {
      */
     public void doGet(HttpServletRequest request, HttpServletResponse response)
         throws ServletException, IOException {
-
+            engine = new DiceEngine();
             request.setAttribute("engine", engine);
 
             String url = "/mainPage.jsp";
