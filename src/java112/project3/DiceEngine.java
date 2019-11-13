@@ -38,6 +38,113 @@ public class DiceEngine {
         centerPot = 0;
     }
 
+    /**
+     * Returns value of centerPot
+     * @return centerPot value
+     */
+    public int getCenterPot() {
+
+        return centerPot;
+    }
+
+    /**
+     * Sets new value of centerPot
+     * @param centerPot value
+     */
+    public void setCenterPot(int centerPot) {
+
+        this.centerPot = centerPot;
+    }
+
+    /**
+     * Returns value of playerList
+     * @return playerList the list of players
+     */
+    public ArrayList<Player> getPlayerList() {
+
+        return playerList;
+    }
+
+    /**
+     * Sets new value of playerList
+     * @param playerList the list of players
+     */
+    public void setPlayerList(ArrayList<Player> playerList) {
+
+        this.playerList = playerList;
+    }
+
+    /**
+     * Returns value of result
+     * @return result
+     */
+    public String getResult() {
+
+        return result;
+    }
+
+    /**
+     * Sets new value of result
+     * @param result
+     */
+    public void setResult(String result) {
+
+        this.result = result;
+    }
+
+    /**
+     * Returns value of playerOne
+     * @return playerOne Player
+     */
+    public Player getPlayerOne() {
+
+        return playerOne;
+    }
+
+    /**
+     * Sets new value of playerOne
+     * @param playerOne Player
+     */
+    public void setPlayerOne(Player playerOne) {
+
+        this.playerOne = playerOne;
+    }
+
+    /**
+     * Returns value of playerTwo
+     * @return playerTwo Player
+     */
+    public Player getPlayerTwo() {
+
+        return playerTwo;
+    }
+
+    /**
+     * Sets new value of playerTwo
+     * @param playerTwo Player
+     */
+    public void setPlayerTwo(Player playerTwo) {
+
+        this.playerTwo = playerTwo;
+    }
+
+    /**
+     * Returns value of playerThree
+     * @return playerThree Player
+     */
+    public Player getPlayerThree() {
+
+        return playerThree;
+    }
+
+    /**
+     * Sets new value of playerThree
+     * @param playerThree Player
+     */
+    public void setPlayerThree(Player playerThree) {
+
+        this.playerThree = playerThree;
+    }
 
     public void run() {
         for(Player player : playerList) {
@@ -89,7 +196,7 @@ public class DiceEngine {
 
     public void threeCenter(Player activePlayer) {
             activePlayer.setOwnedPot(activePlayer.getOwnedPot() + centerPot);
-            centerPot = centerPot - centerPot;
+            setCenterPot(0);
 
     }
 
@@ -125,112 +232,4 @@ public class DiceEngine {
         }
     }
 
-
-	/**
-	* Returns value of centerPot
-	* @return
-	*/
-	public int getCenterPot() {
-		return centerPot;
-	}
-
-	/**
-	* Sets new value of centerPot
-	* @param
-	*/
-	public void setCenterPot(int centerPot) {
-		this.centerPot = centerPot;
-	}
-
-	/**
-	* Returns value of playerList
-	* @return
-	*/
-	public ArrayList<Player> getPlayerList() {
-		return playerList;
-	}
-
-	/**
-	* Sets new value of playerList
-	* @param
-	*/
-	public void setPlayerList(ArrayList<Player> playerList) {
-		this.playerList = playerList;
-	}
-
-	/**
-	* Returns value of result
-	* @return
-	*/
-	public String getResult() {
-		return result;
-	}
-
-	/**
-	* Sets new value of result
-	* @param
-	*/
-	public void setResult(String result) {
-		this.result = result;
-	}
-
-	/**
-	* Returns value of playerOne
-	* @return
-	*/
-	public Player getPlayerOne() {
-		return playerOne;
-	}
-
-	/**
-	* Sets new value of playerOne
-	* @param
-	*/
-	public void setPlayerOne(Player playerOne) {
-		this.playerOne = playerOne;
-	}
-
-	/**
-	* Returns value of playerTwo
-	* @return
-	*/
-	public Player getPlayerTwo() {
-		return playerTwo;
-	}
-
-	/**
-	* Sets new value of playerTwo
-	* @param
-	*/
-	public void setPlayerTwo(Player playerTwo) {
-		this.playerTwo = playerTwo;
-	}
-
-	/**
-	* Returns value of playerThree
-	* @return
-	*/
-	public Player getPlayerThree() {
-		return playerThree;
-	}
-
-	/**
-	* Sets new value of playerThree
-	* @param
-	*/
-	public void setPlayerThree(Player playerThree) {
-		this.playerThree = playerThree;
-	}
-
-//     public String getNumber() {
-//         return number;
-//     }
-//
-//     /**
-//     * Sets new value of playerThree
-//     * @param
-//     */
-//     public void setNumber(String number) {
-//         this.number = number;
-//     }
 }
