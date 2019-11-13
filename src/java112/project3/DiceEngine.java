@@ -190,12 +190,15 @@ public class DiceEngine {
         } else if (activePlayer.getOwnedPot() == 2) {
             activePlayer.setDiceOne(ThreadLocalRandom.current().nextInt(1,6));
             activePlayer.setDiceTwo(ThreadLocalRandom.current().nextInt(1,6));
+            activePlayer.setDiceThree(1);
 
             checkRolls(activePlayer, activePlayer.getDiceOne());
             checkRolls(activePlayer, activePlayer.getDiceTwo());
 
         } else if (activePlayer.getOwnedPot() == 1) {
             activePlayer.setDiceOne(ThreadLocalRandom.current().nextInt(1,6));
+            activePlayer.setDiceTwo(1);
+            activePlayer.setDiceThree(1);
             checkRolls(activePlayer, activePlayer.getDiceOne());
         }
     }
@@ -217,7 +220,7 @@ public class DiceEngine {
     }
 
     public void threeCenter(Player activePlayer) {
-            activePlayer.setOwnedPot(activePlayer.getOwnedPot() + centerPot);
+            activePlayer.setOwnedPot(activePlayer.getOwnedPot() + this.centerPot);
             setCenterPot(0);
     }
 
@@ -226,7 +229,7 @@ public class DiceEngine {
 
         activePlayer.setOwnedPot(activePlayer.getOwnedPot() - 1);
         if (activePlayer.getPlayerNumber() != (playerList.size())) {
-            leftPlayer = playerList.get(activePlayer.getPlayerNumber());
+            leftPlayer = playerList.get(activePlayer.getPlayerNumber()); //this is not okay. ArrayList values:0,1,2  Player numbers:1,2,3
             leftPlayer.setOwnedPot(leftPlayer.getOwnedPot() + 1);
         } else {
             leftPlayer = playerList.get(0);
