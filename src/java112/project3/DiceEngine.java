@@ -147,9 +147,31 @@ public class DiceEngine {
     }
 
     public void run() {
+
         for(Player player : playerList) {
             generateRolls(player);
-
+            // Player leftPlayer;
+            // Player rightPlayer;
+            //
+            // if (player.getPlayerNumber() != (playerList.size())) {
+            //     leftPlayer = playerList.get(player.getPlayerNumber());
+            // } else {
+            //     leftPlayer = playerList.get(0);
+            // }
+            //
+            // if (player.getPlayerNumber() != 0) {
+            //     rightPlayer = playerList.get(player.getPlayerNumber() - 1);
+            // } else {
+            //     rightPlayer = playerList.get(playerList.size() - 1);
+            // }
+            //
+            // if (leftPlayer.getOwnedPot() == 0 && rightPlayer.getOwnedPot() == 0) {
+            //     player.setOwnedPot(player.getOwnedPot() + centerPot);
+            //     setCenterPot(0);
+            //     break;
+            // } else {
+            //     generateRolls(player);
+            // }
         }
     }
 
@@ -197,7 +219,6 @@ public class DiceEngine {
     public void threeCenter(Player activePlayer) {
             activePlayer.setOwnedPot(activePlayer.getOwnedPot() + centerPot);
             setCenterPot(0);
-
     }
 
     public void left(Player activePlayer) {
@@ -211,11 +232,6 @@ public class DiceEngine {
             leftPlayer = playerList.get(0);
             leftPlayer.setOwnedPot(leftPlayer.getOwnedPot() + 1);
         }
-    }
-
-    public void center(Player activePlayer) {
-        activePlayer.setOwnedPot(activePlayer.getOwnedPot() - 1);
-        centerPot++;
     }
 
     public void right(Player activePlayer) {
@@ -232,4 +248,8 @@ public class DiceEngine {
         }
     }
 
+    public void center(Player activePlayer) {
+        activePlayer.setOwnedPot(activePlayer.getOwnedPot() - 1);
+        centerPot++;
+    }
 }
