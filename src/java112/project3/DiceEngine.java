@@ -25,14 +25,17 @@ public class DiceEngine {
 
         playerOne = new Player();
         playerOne.setPlayerNumber(1);
+        layerOne.setPlayerPosition(1);
         playerList.add(playerOne);
 
         playerTwo = new Player();
         playerTwo.setPlayerNumber(2);
+        layerOne.setPlayerPosition(1);
         playerList.add(playerTwo);
 
         playerThree = new Player();
         playerThree.setPlayerNumber(3);
+        layerOne.setPlayerPosition(1);
         playerList.add(playerThree);
 
         centerPot = 0;
