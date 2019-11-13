@@ -38,18 +38,21 @@
     <h3>How the Game Runs</h3>
 
     <ol>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
+        <li>On doGet(), three Player objects are created to play the game in the DiceEngine constructor</li>
+        <li>On doPost() the run() method is called from the DiceEngine JavaBean</li>
+        <li>Within run(), a for loop takes each player's turn</li>
+        <li>
+            <ol>
+                <li>Check player's ownedPot</li>
+                <li>Roll appropriate # of dice</li>
+                <li>Compute logic based on resulting rolls</li>
+            </ol>
+        </li>
+        <li>Info based on turns is stored in the Player class</li>
+        <li>The JSP grabs instance variables to display results to the user</li>
+        <li>When only one player has coins, the game ends</li>
+        <li>Primary player (you!) wins or loses</li>
+        <li>P.S. Don't forget to bring SKITTLES</li>
     </ol>
 
 
