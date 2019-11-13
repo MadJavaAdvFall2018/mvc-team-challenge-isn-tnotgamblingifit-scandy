@@ -81,23 +81,23 @@ public class Player extends Object {
     public void setPlayerNumber(int playerNumber) {
         this.playerNumber = playerNumber;
     }
-}
 
 
-/**
- * Gets the playerNumber attribute of the Player object
- *
- * @return player number
- */
-public int getPlayerPosition() {
-    return playerPosition;
-}
 
-/** Sets the playerNumber attribute of the Player object
- *
- * @param playerNumber player number
- */
-public void setPlayerPosition(int playerPosition) {
-    this.playerPosition = playerPosition;
-}
+    /**
+     * Gets the playerNumber attribute of the Player object
+     *
+     * @return player number
+     */
+    public int getPlayerPosition() {
+        return playerPosition;
+    }
+
+    /** Sets the playerNumber attribute of the Player object
+     *
+     * @param playerNumber player number
+     */
+    public void setPlayerPosition(int playerPosition) {
+        this.playerPosition = playerPosition;
+    }
 }
