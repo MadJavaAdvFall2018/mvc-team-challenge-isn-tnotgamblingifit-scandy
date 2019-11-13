@@ -227,30 +227,39 @@ public class DiceEngine {
             setCenterPot(0);
     }
 
-    public void left(Player activePlayer) {
-        Player leftPlayer;
-
-        activePlayer.setOwnedPot(activePlayer.getOwnedPot() - 1);
-        if (activePlayer.getPlayerNumber() != (playerList.size())) {
-            leftPlayer = playerList.get(activePlayer.getPlayerPosition()); //this is not okay. ArrayList values:0,1,2  Player numbers:1,2,3
-            leftPlayer.setOwnedPot(leftPlayer.getOwnedPot() + 1);
-        } else {
-            leftPlayer = playerList.get(0);
-            leftPlayer.setOwnedPot(leftPlayer.getOwnedPot() + 1);
-        }
-    }
-
     public void right(Player activePlayer) {
-        // local variables
         Player rightPlayer;
 
         activePlayer.setOwnedPot(activePlayer.getOwnedPot() - 1);
-        if (activePlayer.getPlayerNumber() != 0) {
-            rightPlayer = playerList.get(activePlayer.getPlayerNumber() - 1);
+        if (activePlayer.getPlayerNumber() != (playerList.size())) {
+            rightPlayer = playerList.get(activePlayer.getPlayerPosition()); //this is not okay. ArrayList values:0,1,2  Player numbers:1,2,3
             rightPlayer.setOwnedPot(rightPlayer.getOwnedPot() + 1);
         } else {
-            rightPlayer = playerList.get(playerList.size() - 1);
+            rightPlayer = playerList.get(0);
             rightPlayer.setOwnedPot(rightPlayer.getOwnedPot() + 1);
+        }
+    }
+
+<<<<<<< HEAD
+    public void right(Player activePlayer) {
+=======
+    public void center(Player activePlayer) {
+        activePlayer.setOwnedPot(activePlayer.getOwnedPot() - 1);
+        centerPot++;
+    }
+
+    public void left(Player activePlayer) {
+>>>>>>> e0c3518f4d54d5da3a7ffd1745d965a88c4d1c23
+        // local variables
+        Player leftPlayer;
+
+        activePlayer.setOwnedPot(activePlayer.getOwnedPot() - 1);
+        if (activePlayer.getPlayerPosition() != 0) {
+            leftPlayer = playerList.get(activePlayer.getPlayerPosition() - 1);
+            leftPlayer.setOwnedPot(leftPlayer.getOwnedPot() + 1);
+        } else {
+            leftPlayer = playerList.get(playerList.size() - 1);
+            leftPlayer.setOwnedPot(leftPlayer.getOwnedPot() + 1);
         }
     }
 
