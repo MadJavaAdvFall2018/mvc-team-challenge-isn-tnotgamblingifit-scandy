@@ -44,6 +44,125 @@ public class DiceEngine {
         centerPot = 0;
     }
 
+    public void run() {
+
+        for(Player player : playerList) {
+
+
+            if (player.getPlayerNumber() != (playerList.size())) {
+                setRightPlayer(playerList.get(player.getPlayerPosition() + 1));
+            } else {
+                setRightPlayer(playerList.get(0));
+            }
+
+            if (player.getPlayerPosition() != 0) {
+                setLeftPlayer(playerList.get(player.getPlayerPosition() - 1));
+            } else {
+                setLeftPlayer(playerList.get(2));
+            }
+
+            if (leftPlayer.getOwnedPot() == 0 && rightPlayer.getOwnedPot() == 0) {
+                player.setOwnedPot(player.getOwnedPot() + centerPot);
+                whoWon();
+                setCenterPot(0);
+                break;
+            } else {
+                generateRolls(player);
+            }
+        }
+    }
+
+    public void whoWon() {
+        if(playerList.get(0).getOwnedPot() == 0) {
+            //lose
+            this.win = "lose";
+        } else {
+            // win
+            this.win = "win";
+        }
+    }
+
+    public void generateRolls(Player activePlayer) {
+        if (activePlayer.getOwnedPot() >= 3) {
+            activePlayer.setDiceOne(ThreadLocalRandom.current().nextInt(1,6));
+            activePlayer.setDiceTwo(ThreadLocalRandom.current().nextInt(1,6));
+            activePlayer.setDiceThree(ThreadLocalRandom.current().nextInt(1,6));
+            if (activePlayer.getDiceOne() == 5 && activePlayer.getDiceTwo() == 5 && activePlayer.getDiceThree() == 5) {
+                threeCenter(activePlayer);
+            } else {
+                checkRolls(activePlayer, activePlayer.getDiceOne());
+                checkRolls(activePlayer, activePlayer.getDiceTwo());
+                checkRolls(activePlayer, activePlayer.getDiceThree());
+            }
+        } else if (activePlayer.getOwnedPot() == 2) {
+            activePlayer.setDiceOne(ThreadLocalRandom.current().nextInt(1,6));
+            activePlayer.setDiceTwo(ThreadLocalRandom.current().nextInt(1,6));
+            activePlayer.setDiceThree(1);
+
+            checkRolls(activePlayer, activePlayer.getDiceOne());
+            checkRolls(activePlayer, activePlayer.getDiceTwo());
+
+        } else if (activePlayer.getOwnedPot() == 1) {
+            activePlayer.setDiceOne(ThreadLocalRandom.current().nextInt(1,6));
+            activePlayer.setDiceTwo(1);
+            activePlayer.setDiceThree(1);
+            checkRolls(activePlayer, activePlayer.getDiceOne());
+        }
+    }
+
+    public void checkRolls(Player activePlayer, int generateRoll) {
+
+        if (generateRoll == 1 || generateRoll == 2 || generateRoll == 6) {
+            result = "Dot";
+        } else if (generateRoll == 4) {
+            result = "Left";
+            left(activePlayer);
+        } else if (generateRoll == 5) {
+            result = "Center";
+            center(activePlayer);
+        } else if (generateRoll == 3) {
+            result = "Right";
+            right(activePlayer);
+        }
+    }
+
+    public void threeCenter(Player activePlayer) {
+            activePlayer.setOwnedPot(activePlayer.getOwnedPot() + this.centerPot);
+            setCenterPot(0);
+    }
+
+    public void right(Player activePlayer) {
+        Player rightPlayer;
+
+        activePlayer.setOwnedPot(activePlayer.getOwnedPot() - 1);
+        if (activePlayer.getPlayerNumber() != (playerList.size())) {
+            rightPlayer = playerList.get(activePlayer.getPlayerPosition() + 1);
+            rightPlayer.setOwnedPot(rightPlayer.getOwnedPot() + 1);
+        } else {
+            rightPlayer = playerList.get(0);
+            rightPlayer.setOwnedPot(rightPlayer.getOwnedPot() + 1);
+        }
+    }
+
+    public void left(Player activePlayer) {
+        // local variables
+        Player leftPlayer;
+
+        activePlayer.setOwnedPot(activePlayer.getOwnedPot() - 1);
+        if (activePlayer.getPlayerPosition() != 0) {
+            leftPlayer = playerList.get(activePlayer.getPlayerPosition() - 1);
+            leftPlayer.setOwnedPot(leftPlayer.getOwnedPot() + 1);
+        } else {
+            leftPlayer = playerList.get(2);
+            leftPlayer.setOwnedPot(leftPlayer.getOwnedPot() + 1);
+        }
+    }
+
+    public void center(Player activePlayer) {
+        activePlayer.setOwnedPot(activePlayer.getOwnedPot() - 1);
+        centerPot++;
+    }
+
     /**
      * Returns value of centerPot
      * @return centerPot value
@@ -172,7 +291,7 @@ public class DiceEngine {
      * Returns value of leftPlayer
      * @return leftPlayer
      */
-    public Player leftPlayer() {
+    public Player getLeftPlayer() {
 
         return leftPlayer;
     }
@@ -189,7 +308,7 @@ public class DiceEngine {
      * Returns value of rightPlayer
      * @return rightPlayer
      */
-    public Player rightPlayer() {
+    public Player getRightPlayer() {
 
         return playerThree;
     }
@@ -201,124 +320,5 @@ public class DiceEngine {
     public void setRightPlayer(Player rightPlayer) {
 
         this.rightPlayer = rightPlayer;
-    }
-
-    public void run() {
-
-        for(Player player : playerList) {
-
-
-            if (player.getPlayerNumber() != (playerList.size())) {
-                setRightPlayer(playerList.get(player.getPlayerPosition() + 1));
-            } else {
-                setRightPlayer(playerList.get(0));
-            }
-
-            if (player.getPlayerPosition() != 0) {
-                setLeftPlayer(playerList.get(player.getPlayerPosition() - 1));
-            } else {
-                setLeftPlayer(playerList.get(2));
-            }
-
-            if (leftPlayer.getOwnedPot() == 0 && rightPlayer.getOwnedPot() == 0) {
-                player.setOwnedPot(player.getOwnedPot() + centerPot);
-                whoWon();
-                setCenterPot(0);
-                break;
-            } else {
-                generateRolls(player);
-            }
-        }
-    }
-
-    public void whoWon() {
-        if(playerList.get(0).getOwnedPot() == 0) {
-            //lose
-            this.win = "lose";
-        } else {
-            // win
-            this.win = "win";
-        }
-    }
-
-    public void generateRolls(Player activePlayer) {
-        if (activePlayer.getOwnedPot() >= 3) {
-            activePlayer.setDiceOne(ThreadLocalRandom.current().nextInt(1,6));
-            activePlayer.setDiceTwo(ThreadLocalRandom.current().nextInt(1,6));
-            activePlayer.setDiceThree(ThreadLocalRandom.current().nextInt(1,6));
-            if (activePlayer.getDiceOne() == 5 && activePlayer.getDiceTwo() == 5 && activePlayer.getDiceThree() == 5) {
-                threeCenter(activePlayer);
-            } else {
-                checkRolls(activePlayer, activePlayer.getDiceOne());
-                checkRolls(activePlayer, activePlayer.getDiceTwo());
-                checkRolls(activePlayer, activePlayer.getDiceThree());
-            }
-        } else if (activePlayer.getOwnedPot() == 2) {
-            activePlayer.setDiceOne(ThreadLocalRandom.current().nextInt(1,6));
-            activePlayer.setDiceTwo(ThreadLocalRandom.current().nextInt(1,6));
-            activePlayer.setDiceThree(1);
-
-            checkRolls(activePlayer, activePlayer.getDiceOne());
-            checkRolls(activePlayer, activePlayer.getDiceTwo());
-
-        } else if (activePlayer.getOwnedPot() == 1) {
-            activePlayer.setDiceOne(ThreadLocalRandom.current().nextInt(1,6));
-            activePlayer.setDiceTwo(1);
-            activePlayer.setDiceThree(1);
-            checkRolls(activePlayer, activePlayer.getDiceOne());
-        }
-    }
-
-    public void checkRolls(Player activePlayer, int generateRoll) {
-
-        if (generateRoll == 1 || generateRoll == 2 || generateRoll == 6) {
-            result = "Dot";
-        } else if (generateRoll == 4) {
-            result = "Left";
-            left(activePlayer);
-        } else if (generateRoll == 5) {
-            result = "Center";
-            center(activePlayer);
-        } else if (generateRoll == 3) {
-            result = "Right";
-            right(activePlayer);
-        }
-    }
-
-    public void threeCenter(Player activePlayer) {
-            activePlayer.setOwnedPot(activePlayer.getOwnedPot() + this.centerPot);
-            setCenterPot(0);
-    }
-
-    public void right(Player activePlayer) {
-        Player rightPlayer;
-
-        activePlayer.setOwnedPot(activePlayer.getOwnedPot() - 1);
-        if (activePlayer.getPlayerNumber() != (playerList.size())) {
-            rightPlayer = playerList.get(activePlayer.getPlayerPosition() + 1);
-            rightPlayer.setOwnedPot(rightPlayer.getOwnedPot() + 1);
-        } else {
-            rightPlayer = playerList.get(0);
-            rightPlayer.setOwnedPot(rightPlayer.getOwnedPot() + 1);
-        }
-    }
-
-    public void left(Player activePlayer) {
-        // local variables
-        Player leftPlayer;
-
-        activePlayer.setOwnedPot(activePlayer.getOwnedPot() - 1);
-        if (activePlayer.getPlayerPosition() != 0) {
-            leftPlayer = playerList.get(activePlayer.getPlayerPosition() - 1);
-            leftPlayer.setOwnedPot(leftPlayer.getOwnedPot() + 1);
-        } else {
-            leftPlayer = playerList.get(2);
-            leftPlayer.setOwnedPot(leftPlayer.getOwnedPot() + 1);
-        }
-    }
-
-    public void center(Player activePlayer) {
-        activePlayer.setOwnedPot(activePlayer.getOwnedPot() - 1);
-        centerPot++;
     }
 }
