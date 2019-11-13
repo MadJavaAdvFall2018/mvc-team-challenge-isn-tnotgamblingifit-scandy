@@ -156,14 +156,14 @@ public class DiceEngine {
             Player leftPlayer;
             Player rightPlayer;
 
-            if (activePlayer.getPlayerNumber() != (playerList.size())) {
-                rightPlayer = playerList.get(activePlayer.getPlayerPosition() + 1);
+            if (player.getPlayerNumber() != (playerList.size())) {
+                rightPlayer = playerList.get(player.getPlayerPosition() + 1);
             } else {
                 rightPlayer = playerList.get(0);
             }
 
-            if (activePlayer.getPlayerPosition() != 0) {
-                leftPlayer = playerList.get(activePlayer.getPlayerPosition() - 1);
+            if (player.getPlayerPosition() != 0) {
+                leftPlayer = playerList.get(player.getPlayerPosition() - 1);
             } else {
                 leftPlayer = playerList.get(2);
             }
