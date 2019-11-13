@@ -3,12 +3,13 @@
 <html>
   <head>
     <meta name="generator" content="HTML Tidy, see www.w3.org">
+    <link type="text/css" rel="stylesheet" href="ourcss.css">
 
-    <title>Request Parm/Form Demo</title>
+    <title>Left, Center, Right Diagram</title>
   </head>
 
   <body>
-    <h3>Form/Request Param Demo</h3>
+    <h1>Left, Center, Right Diagram</h1>
 
     <h3>The Player Bean: Controlling the Bits and Bobs</h3>
     <table>
@@ -34,15 +35,12 @@
         <tr><td>private Player rightPlayer</td><td>The player to the right of the current Player being processed in the run loop</td></tr>
     <table>
 
+    <h3>How the Game Runs</h3>
 
 
-    <form action="/java112/request-params" method="GET">
-          <input type="text" name="param1" /><br />
-          <br />
-           <input type="text" name="param2" value="default value" /><br />
-          <br />
-           <input type="submit" name="submit" value="Enter" />
-        </form>
+
+
+    <a href="/java112/lcr">Take Me To The Game!</a>
 
   </body>
 </html>
