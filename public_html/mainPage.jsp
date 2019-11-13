@@ -9,8 +9,16 @@
 
   <body>
     <header>
-          <h1>Left, Right, Center</h1>
-          <h2>change the file type back to jsp after layout is figured out</h2>
+          <h1>Left, Center, Right</h1>
+          <h2>Directions: Hit Roll. Do it again. And again. And again. The game will eventually end when someone has all the coins...erm, we mean "Skittles."</h2>
+          <h2>KEY</h2>
+          <ul>
+              <li id="blueKey">If you roll BLUE, you give a Skittle to the player on your LEFT.</li>
+              <li id="redKey">If you roll RED, you give a Skittle to the player on your RIGHT.</li>
+              <li class="centerKey">If you roll C, you put a Skittle in the CENTER.</li>
+              <li id="dotKey">If you roll WHITE, nothing happens. How vanilla!</li>
+              <li class="centerKey">If you roll THREE Cs, you GET ALL THE SKITTLES IN THE CENTER!</li>
+          </ul>
     </header>
 
     <main class="dice_grid">

@@ -43,13 +43,13 @@ public class Player extends Object {
      *  Constructor for the Player object
      */
     public Player() {
-        ownedPot = 3;
+        ownedPot = 10;
     }
 
     /**
      *  Gets the ownedPot attribute of the Player object
      *
-     *@return    The ownedPot value
+     *@return The ownedPot value
      */
     public int getOwnedPot() {
         return ownedPot;
