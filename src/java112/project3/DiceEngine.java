@@ -16,6 +16,9 @@ public class DiceEngine {
     private Player playerOne;
     private Player playerTwo;
     private Player playerThree;
+    private Player leftPlayer;
+    private Player rightPlayer;
+
 
     /**
      *  Constructor for the DiceEngine object
@@ -149,23 +152,55 @@ public class DiceEngine {
         this.playerThree = playerThree;
     }
 
+    /**
+     * Returns value of leftPlayer
+     * @return leftPlayer
+     */
+    public Player leftPlayer() {
+
+        return leftPlayer;
+    }
+
+    /**
+     * Sets new value of leftPlayer
+     * @param leftPlayer Player
+     */
+    public void setLeftPlayer(Player leftPlayer) {
+        this.leftPlayer = leftPlayer;
+    }
+
+    /**
+     * Returns value of rightPlayer
+     * @return rightPlayer
+     */
+    public Player rightPlayer() {
+
+        return playerThree;
+    }
+
+    /**
+     * Sets new value of rightPlayer
+     * @param rightPlayer Player
+     */
+    public void setRightPlayer(Player rightPlayer) {
+
+        this.rightPlayer = rightPlayer;
+    }
+
     public void run() {
 
         for(Player player : playerList) {
-            generateRolls(player);
-            Player leftPlayer;
-            Player rightPlayer;
 
             if (player.getPlayerNumber() != (playerList.size())) {
-                rightPlayer = playerList.get(player.getPlayerPosition() + 1);
+                setRightPlayer(playerList.get(player.getPlayerPosition() + 1));
             } else {
-                rightPlayer = playerList.get(0);
+                setRightPlayer(playerList.get(0));
             }
 
             if (player.getPlayerPosition() != 0) {
-                leftPlayer = playerList.get(player.getPlayerPosition() - 1);
+                setLeftPlayer(playerList.get(player.getPlayerPosition() - 1));
             } else {
-                leftPlayer = playerList.get(2);
+                setLeftPlayer(playerList.get(2));
             }
 
             if (leftPlayer.getOwnedPot() == 0 && rightPlayer.getOwnedPot() == 0) {
