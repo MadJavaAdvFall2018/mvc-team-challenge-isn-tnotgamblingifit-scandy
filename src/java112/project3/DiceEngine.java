@@ -16,13 +16,9 @@ public class DiceEngine {
     private Player playerOne;
     private Player playerTwo;
     private Player playerThree;
-<<<<<<< HEAD
     private String win;
-=======
     private Player leftPlayer;
     private Player rightPlayer;
-
->>>>>>> b265f17f9316bc76ab77b931bf49bbdb9cb0cd89
 
     /**
      *  Constructor for the DiceEngine object
