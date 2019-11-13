@@ -16,7 +16,6 @@ public class DiceEngine {
     private Player playerOne;
     private Player playerTwo;
     private Player playerThree;
-    private String number = "3";
 
     /**
      *  Constructor for the DiceEngine object
@@ -74,7 +73,7 @@ public class DiceEngine {
 
     public void checkRolls(Player activePlayer, int generateRoll) {
 
-        if (generateRoll == 1 || generateRoll == 2 || generateRoll == 3) {
+        if (generateRoll == 1 || generateRoll == 2 || generateRoll == 6) {
             result = "Dot";
         } else if (generateRoll == 4) {
             result = "Left";
@@ -82,7 +81,7 @@ public class DiceEngine {
         } else if (generateRoll == 5) {
             result = "Center";
             center(activePlayer);
-        } else if (generateRoll == 6) {
+        } else if (generateRoll == 3) {
             result = "Right";
             right(activePlayer);
         }
@@ -90,7 +89,7 @@ public class DiceEngine {
 
     public void threeCenter(Player activePlayer) {
             activePlayer.setOwnedPot(activePlayer.getOwnedPot() + centerPot);
-            centerPot = 0;
+            centerPot = centerPot - centerPot;
 
     }
 
@@ -223,15 +222,15 @@ public class DiceEngine {
 		this.playerThree = playerThree;
 	}
 
-    public String getNumber() {
-        return number;
-    }
-
-    /**
-    * Sets new value of playerThree
-    * @param
-    */
-    public void setNumber(String number) {
-        this.number = number;
-    }
+//     public String getNumber() {
+//         return number;
+//     }
+//
+//     /**
+//     * Sets new value of playerThree
+//     * @param
+//     */
+//     public void setNumber(String number) {
+//         this.number = number;
+//     }
 }

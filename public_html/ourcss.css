@@ -1,7 +1,5 @@
-
-
 body {
-    background-color: #b9ff99;
+    background-color: #69c987;
     display: grid;
     font-weight: bold;
 }
@@ -14,7 +12,30 @@ main {
     align-self: end;
 }
 
+ul {
+    list-style-type: none;
+    border: 3px dotted black;
+    max-width: 30%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+}
 
+#blueKey {
+    color: blue;
+}
+
+#redKey {
+    color: red;
+}
+
+.centerKey {
+    color: black;
+}
+
+#dotKey {
+    color: white;
+}
 
 a {
     margin-top: 3em;
@@ -39,22 +60,27 @@ a {
     grid-template-rows: auto auto auto;
 }
 /* the dice block css */
-#d1, #d2 {
-    background: red;
+
+/* do-nothing dice */
+#d1, #d2, #d6 {
+    background: white;
 }
 
-#d3 {
+/* left dice */
+#d4 {
+    background: blue;
+}
+
+/* center dice  */
+#d5 {
     background: url("images/c.png");
     background-repeat: no-repeat;
     background-size: 100%;
 }
 
-#d4 {
-    background: white;
-}
-
-#d5, #d6 {
-    background: blue;
+/* right dice */
+#d3 {
+    background: red;
 }
 
 .dice_grid {
@@ -68,8 +94,8 @@ a {
 /* dice size */
 .dice {
     border: 2px solid black;
-    min-width: 20em;
-    min-height: 20em;
+    min-width: 15em;
+    min-height: 15em;
     border-radius: 50px;
 }
 
