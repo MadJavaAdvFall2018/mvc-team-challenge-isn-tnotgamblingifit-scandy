@@ -116,3 +116,16 @@ a {
     border-radius: 7px;
     margin-top: 1em;
 }
+
+
+/* win screen */
+
+#win {
+    /* display: none; */
+    background-image: url("images/winner.jpeg");
+}
+
+#lose {
+    /* display: none; */
+    background-image: url("images/lost.jpg");
+}

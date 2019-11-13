@@ -16,6 +16,7 @@ public class DiceEngine {
     private Player playerOne;
     private Player playerTwo;
     private Player playerThree;
+    private String win;
 
     /**
      *  Constructor for the DiceEngine object
@@ -94,7 +95,23 @@ public class DiceEngine {
 
         this.result = result;
     }
+    /**
+     * Returns value of result
+     * @return result
+     */
+    public String getWin() {
 
+        return win;
+    }
+
+    /**
+     * Sets new value of result
+     * @param result
+     */
+    public void setWin(String win) {
+
+        this.win = win;
+    }
     /**
      * Returns value of playerOne
      * @return playerOne Player
@@ -152,7 +169,7 @@ public class DiceEngine {
     public void run() {
 
         for(Player player : playerList) {
-            generateRolls(player);
+            // generateRolls(player);
             Player leftPlayer;
             Player rightPlayer;
 
@@ -170,11 +187,22 @@ public class DiceEngine {
 
             if (leftPlayer.getOwnedPot() == 0 && rightPlayer.getOwnedPot() == 0) {
                 player.setOwnedPot(player.getOwnedPot() + centerPot);
+                whoWon();
                 setCenterPot(0);
                 break;
             } else {
                 generateRolls(player);
             }
+        }
+    }
+
+    public void whoWon() {
+        if(playerList.get(0).getOwnedPot() == 0) {
+            //lose
+            this.win = "lose";
+        } else {
+            // win
+            this.win = "win";
         }
     }
 

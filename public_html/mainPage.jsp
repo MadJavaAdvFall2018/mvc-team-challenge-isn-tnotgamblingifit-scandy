@@ -7,7 +7,7 @@
     <title>Player screen</title>
   </head>
 
-  <body>
+  <body id="${engine.win}">
     <header>
           <h1>Left, Center, Right</h1>
           <h2>Directions: Hit Roll. Do it again. And again. And again. The game will eventually end when someone has all the coins...erm, we mean "Skittles."</h2>
