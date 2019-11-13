@@ -132,8 +132,18 @@ a {
 
 /* index.jsp styles */
 
+h1 {
+    background-color: goldenrod;
+    border: 3px ridge purple;
+    border-radius: 5em;
+    color: purple;
+    max-width: 30%;
+    padding: .5em;
+    text-align: center;
+    text-shadow: 1px 1px 2px black;
+}
+
 table {
-    background-color: white;
     border-collapse: collapse;
     box-shadow: 2px 3px 4px black;
     max-width: 40%;
@@ -142,4 +152,35 @@ table {
 td, th {
     border: 3px solid grey;
     padding: 0.5em;
+}
+
+th {
+    background-color: #f0c24d;
+}
+
+td {
+    background-color: #f2deaa;
+}
+
+#gameButton {
+    background-color: goldenrod;
+    border: 3px ridge purple;
+    border-radius: 5em;
+    color: purple;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 20%;
+    padding: .5em;
+    text-shadow: 1px 1px 1px black;
+    transition-property: all;
+    transition-duration: .2s;
+}
+
+#gameButton a {
+    text-decoration: none;
+}
+
+#gameButton:hover, #gameButton:focus {
+    background-color: yellow;
+    box-shadow: 2px 3px 4px black;
 }

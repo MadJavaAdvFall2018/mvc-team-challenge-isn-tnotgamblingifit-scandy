@@ -37,10 +37,25 @@
 
     <h3>How the Game Runs</h3>
 
+    <ol>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ol>
 
 
 
-    <a href="/java112/lcr">Take Me To The Game!</a>
+
+    <div id="gameButton"><a href="/java112/lcr">Take Me To The Game!</a></div>
 
   </body>
 </html>
